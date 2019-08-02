@@ -9,6 +9,7 @@ nunjucks.configure("views", {
   watch: true
 });
 
+app.use(express.urlencoded({ extended: false }));
 app.set("view engine", "njk");
 
 // Rota principal
@@ -35,6 +36,18 @@ app.get("/user", (req, res) => {
 });
 app.get("/users", (req, res) => {
   return res.render("list", { users });
+});
+
+//Formulario de criação de usuários
+app.get("/new", (req, res) => {
+  return res.render("new");
+});
+
+//Formulario de criação de usuários
+app.post("/create", (req, res) => {
+  console.log(req.body);
+  users.push(req.body.user);
+  return res.redirect("/users");
 });
 
 app.listen(3000);
