@@ -6,7 +6,8 @@ app.get("/", (req, res) => {
   res.send("xaxax");
 });
 
-app.get("/login/:id", (req, res) => {
+//Pega parametros
+app.get("/view/:id", (req, res) => {
   res.send(`Bem vindo id ${req.params.id}`);
 });
 
