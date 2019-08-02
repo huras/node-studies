@@ -28,4 +28,13 @@ app.get("/json/:nome", (req, res) => {
   });
 });
 
+//passando dados para a view
+const users = ["Diego Fernandes", "Robson Marques", "Carlão"];
+app.get("/user", (req, res) => {
+  return res.render("list", { name: "Huras" });
+});
+app.get("/users", (req, res) => {
+  return res.render("list", { users });
+});
+
 app.listen(3000);
