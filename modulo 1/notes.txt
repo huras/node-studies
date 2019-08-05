@@ -1,0 +1,6 @@
+Nodemon serve pra não precisar rodar o servidor denovo
+adicionar script do nodemon no package.json :
+    "scripts": {
+        "start" : "nodemon index.js"
+    }
+
